@@ -10,5 +10,16 @@
   "avg_right_hip_angle": 120.3017001027801,
   "avg_shoulder_line_tilt": -4.72528722926209,
   "avg_hip_line_tilt": -6.420079913195573,
-  "avg_hip_to_hand_ratio": 1.0705132915661622
+  "avg_hip_to_hand_ratio": 1.0705132915661622,
+  "grip_analysis": {
+    "total_observations": 1115,
+    "mismatch_count": 0,
+    "by_hold_type": {},
+    "by_grip_type": {
+      "full_crimp": 1
+    },
+    "mismatches": []
+  },
+  "route_detection": "auto",
+  "grip_source": "local"
 }

@@ -7,8 +7,9 @@ Description-Content-Type: text/markdown
 Requires-Dist: mediapipe
 Requires-Dist: opencv-python
 Requires-Dist: numpy
-Requires-Dist: google-generativeai
+Requires-Dist: google-genai
 Requires-Dist: pillow
+Requires-Dist: onnxruntime
 
 # Boulder Coach
 
@@ -42,7 +43,21 @@ python -m boulder_coach.cli --input /path/to/video.mp4 --output /path/to/output
 
 ### Route-only hold analysis with Gemini
 Provide a route mask image where route holds are white and the rest is black.
+If you omit `--route-mask`, the tool will auto-detect the route by tracking wrist contact points.
 Set `GEMINI_API_KEY` in your environment to enable Gemini.
+Default Gemini model: `models/gemini-flash-latest` (override with `--gemini-model`).
+
+### Local grip classifier (ONNX)
+You can run a local image-based classifier on hand/hold crops using an ONNX model and labels file.
+The labels file should list grip classes, one per line (e.g., `open_hand`, `half_crimp`, `full_crimp`, `pinch`).
+
+```
+python -m boulder_coach.cli \
+	--input /path/to/video.mp4 \
+	--output /path/to/output \
+	--local-grip-model /path/to/grip_model.onnx \
+	--local-grip-labels /path/to/labels.txt
+```
 
 ```
 python -m boulder_coach.cli \
@@ -50,7 +65,8 @@ python -m boulder_coach.cli \
 	--output /path/to/output \
 	--route-mask /path/to/route_mask.png \
 	--gemini \
-	--gemini-every-n 10
+	--gemini-every-n 10 \
+	--gemini-max-calls 5
 ```
 
 Optional expected grip map (JSON):
@@ -61,6 +77,7 @@ Optional expected grip map (JSON):
 	"pinch": "pinch"
 }
 ```
+Pass it with `--expected-grip-map /path/to/expected_grip.json`.
 
 ## Outputs
 - annotated.mp4

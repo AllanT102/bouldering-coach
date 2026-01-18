@@ -1,5 +1,6 @@
 mediapipe
 opencv-python
 numpy
-google-generativeai
+google-genai
 pillow
+onnxruntime

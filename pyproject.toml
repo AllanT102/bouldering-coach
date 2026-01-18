@@ -12,8 +12,6 @@ dependencies = [
   "mediapipe",
   "opencv-python",
   "numpy",
-  "google-generativeai",
-  "pillow",
 ]
 
 [tool.setuptools]

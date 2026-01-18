@@ -1,0 +1,4 @@
+open_hand
+half_crimp
+full_crimp
+pinch

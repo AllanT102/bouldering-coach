@@ -5,6 +5,7 @@ src/boulder_coach/cli.py
 src/boulder_coach/gemini_client.py
 src/boulder_coach/grip.py
 src/boulder_coach/holds.py
+src/boulder_coach/local_classifier.py
 src/boulder_coach/metrics.py
 src/boulder_coach/pipeline.py
 src/boulder_coach/pose.py
