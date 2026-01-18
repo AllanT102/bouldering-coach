@@ -1,0 +1,59 @@
+# Boulder Coach
+
+Analyze bouldering form from an MP4 video using pose estimation. The tool generates an annotated video, per-frame metrics, and a summary report.
+
+## What it does
+- Detects body pose per frame
+- Computes basic climbing form metrics (joint angles, shoulder/hip tilt, reach ratio)
+- Writes annotated MP4 and metrics CSV/JSON
+- Optional: route-only hold capture with Gemini grip analysis
+
+## Quick start
+1. Install dependencies
+2. Run the analyzer
+
+### Install
+Use your preferred environment manager, then install:
+- mediapipe
+- opencv-python
+- numpy
+
+Or install the project in editable mode:
+```
+python -m pip install -e .
+```
+
+### Run
+```
+python -m boulder_coach.cli --input /path/to/video.mp4 --output /path/to/output
+```
+
+### Route-only hold analysis with Gemini
+Provide a route mask image where route holds are white and the rest is black.
+If you omit `--route-mask`, the tool will auto-detect the route by tracking wrist contact points.
+Set `GEMINI_API_KEY` in your environment to enable Gemini.
+
+```
+python -m boulder_coach.cli \
+	--input /path/to/video.mp4 \
+	--output /path/to/output \
+	--route-mask /path/to/route_mask.png \
+	--gemini \
+	--gemini-every-n 10
+```
+
+Optional expected grip map (JSON):
+```
+{
+	"edge": "open_hand",
+	"sloper": "open_hand",
+	"pinch": "pinch"
+}
+```
+Pass it with `--expected-grip-map /path/to/expected_grip.json`.
+
+## Outputs
+- annotated.mp4
+- metrics.csv
+- summary.json
+- grip_analysis.json (when Gemini is enabled)

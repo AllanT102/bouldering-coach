@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/boulder_coach/__init__.py
+src/boulder_coach/cli.py
+src/boulder_coach/gemini_client.py
+src/boulder_coach/grip.py
+src/boulder_coach/holds.py
+src/boulder_coach/metrics.py
+src/boulder_coach/pipeline.py
+src/boulder_coach/pose.py
+src/boulder_coach/render.py
+src/boulder_coach.egg-info/PKG-INFO
+src/boulder_coach.egg-info/SOURCES.txt
+src/boulder_coach.egg-info/dependency_links.txt
+src/boulder_coach.egg-info/requires.txt
+src/boulder_coach.egg-info/top_level.txt

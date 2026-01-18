@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boulder-coach"
+version = "0.1.0"
+description = "Analyze bouldering form from MP4 videos"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "mediapipe",
+  "opencv-python",
+  "numpy",
+  "google-generativeai",
+  "pillow",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

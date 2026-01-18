@@ -1,0 +1,5 @@
+mediapipe
+opencv-python
+numpy
+google-generativeai
+pillow

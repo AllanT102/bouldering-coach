@@ -1,0 +1,14 @@
+{
+  "total_frames": 2282,
+  "detected_frames": 2179,
+  "duration_seconds": 38.03333333333333,
+  "avg_left_elbow_angle": 96.74592501020176,
+  "avg_right_elbow_angle": 95.67089578318205,
+  "avg_left_knee_angle": 122.54481772206245,
+  "avg_right_knee_angle": 128.57247184133232,
+  "avg_left_hip_angle": 120.9665542652728,
+  "avg_right_hip_angle": 120.3017001027801,
+  "avg_shoulder_line_tilt": -4.72528722926209,
+  "avg_hip_line_tilt": -6.420079913195573,
+  "avg_hip_to_hand_ratio": 1.0705132915661622
+}
